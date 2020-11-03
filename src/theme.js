@@ -2,7 +2,12 @@ const theme = {
     colors: {
       textPrimary: '#24292e',
       textSecondary: '#586069',
-      primary: '#0366d6',
+      textDarkBackground: '#f5f6f7',
+      primary: '#586069',
+      darkBackground: '#24292e',
+      whiteBackground: 'white',
+      mainBackground: '#e1e4e8', 
+      blueBackground: '#0366d6'  
     },
     fontSizes: {
       body: 14,

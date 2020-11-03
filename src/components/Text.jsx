@@ -5,16 +5,19 @@ import theme from '../theme';
 
 const styles = StyleSheet.create({
   text: {
-    color: theme.colors.textPrimary,
+    color: theme.colors.textPrimary,        
     fontSize: theme.fontSizes.body,
     fontFamily: theme.fonts.main,
-    fontWeight: theme.fontWeights.normal,
-  },
+    fontWeight: theme.fontWeights.normal,    
+  },  
   colorTextSecondary: {
     color: theme.colors.textSecondary,
   },
   colorPrimary: {
     color: theme.colors.primary,
+  },
+  colorTextDarkBackground: {
+    color: theme.colors.textDarkBackground,
   },
   fontSizeSubheading: {
     fontSize: theme.fontSizes.subheading,
@@ -29,6 +32,7 @@ const Text = ({ color, fontSize, fontWeight, style, ...props }) => {
     styles.text,
     color === 'textSecondary' && styles.colorTextSecondary,
     color === 'primary' && styles.colorPrimary,
+    color === 'darkBackground' && styles.colorTextDarkBackground,    
     fontSize === 'subheading' && styles.fontSizeSubheading,
     fontWeight === 'bold' && styles.fontWeightBold,
     style,
