@@ -13,7 +13,7 @@ const RepositoryItemCounts = ( { count, text } ) => {
 
   return (       
     <View>   
-        <Text fontWeight="bold" fontSize="subheading">{stats(count)}</Text>            
+        <Text fontWeight="bold" fontSize="subheading" style={{alignSelf:'center'}}>{stats(count)}</Text>            
         <Text fontWeight="bold" fontSize="subheading">{text}</Text>
     </View>
   );

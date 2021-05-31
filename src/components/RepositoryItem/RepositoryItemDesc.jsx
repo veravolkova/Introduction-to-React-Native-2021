@@ -9,7 +9,7 @@ import theme from "../../theme";
 const styles = StyleSheet.create({    
   languageTag: {
     backgroundColor: theme.colors.blueBackground,
-    marginTop: 5,
+    marginTop: 10,
     padding: 4,
     borderRadius: 3,
   },   
