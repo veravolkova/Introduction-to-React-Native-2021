@@ -5,6 +5,7 @@ import { useField } from 'formik';
 import TextInput from './TextInput';
 import Text from './Text';
 
+//form style code source:
 //https://scottdomes.com/react-native-sexy-forms/
 const styles = StyleSheet.create({
     input: {
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     errorText: { 
       textAlign: 'center', 
       height: 17.5, 
-      color: 'red',     
+      color: '#d73a4a',     
     },
     errorInput: { 
       height: 40,
@@ -39,8 +40,8 @@ const styles = StyleSheet.create({
       backgroundColor: 'white',                
       marginBottom: 6,     
       borderRadius: 8, 
-      borderColor: 'red',   
-      borderWidth: 1,
+      borderColor: '#d73a4a',   
+      borderWidth: 2,
     },    
   });
 
@@ -49,34 +50,17 @@ const FormikTextInput = ({ name, ...props }) => {
   const [field, meta, helpers] = useField(name);
   const showError = meta.touched && meta.error;
 
-  //const inputContainer = [styles.inputContainer, showError ? styles.errorTextInput : styles.regularTextInput];
-
   return (
-    <View style={styles.inputContainer}>    
-  
-     {!showError ?
-      <TextInput
-        style={styles.input}        
+    <View style={styles.inputContainer}>  
+        <TextInput
+        style={!showError ? styles.input : styles.errorInput}        
         onChangeText={value => helpers.setValue(value)}
         onBlur={() => helpers.setTouched(true)}        
         value={field.value}        
         error={showError}        
         {...props}
-      />      
-      :  
-      <>
-      <TextInput
-      style={styles.errorInput}        
-      onChangeText={value => helpers.setValue(value)}
-      onBlur={() => helpers.setTouched(true)}        
-      value={field.value}        
-      error={showError}
-      {...props}
-      />   
-     <Text style={styles.errorText}>{meta.error}</Text>
-     </>
-     } 
-      {/* {showError && <Text style={styles.errorText}>{meta.error}</Text>}     */}
+      />
+      <Text style={styles.errorText}>{meta.error}</Text>     
   </View>
   );
 };
