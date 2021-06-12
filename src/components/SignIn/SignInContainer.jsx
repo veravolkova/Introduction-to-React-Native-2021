@@ -26,9 +26,7 @@ const SignInContainer = ({ onSubmit }) => {
         <FormikTextInput
           name="username"
           placeholder="Username"                 
-        />
-      
-        {/* <ErrorMessage name='username' style={{color: 'red', height: 30}}/>  */}
+        />    
        
         <FormikTextInput 
           name="password"

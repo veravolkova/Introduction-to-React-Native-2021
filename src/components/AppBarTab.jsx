@@ -1,7 +1,6 @@
 import React from "react";
 import { View, StyleSheet, TouchableWithoutFeedback} from "react-native";
-import { Link, Linking } from "react-router-native";
-//import { Actions } from 'react-router-native';
+import { Link } from "react-router-native";
 
 import Text from "./Text";
 
@@ -12,14 +11,15 @@ const styles = StyleSheet.create({
 });
 
 
-const AppBarTab = ( { text, link } ) => {
+const AppBarTab = ( { text, link, onClick } ) => {
 
     return (    
 
     <View style={styles.tabContainer}>
     <Link    
       to={link}
-      component={TouchableWithoutFeedback}      
+      component={TouchableWithoutFeedback}  
+      onPress={onClick}
     >
     <Text                      
           fontWeight="bold" 
