@@ -5,7 +5,7 @@ import useSignIn from '../../hooks/useSignIn';
 import SignInWrapper from './SignInWrapper';
 
 
-const SignIn = () => { 
+export const SignIn = () => { 
   const [signIn] = useSignIn();
 
   const history = useHistory();

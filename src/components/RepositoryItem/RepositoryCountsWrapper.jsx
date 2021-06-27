@@ -25,7 +25,7 @@ const RepositoryCountsWrapper = ( { item } ) => {
         <RepositoryItemCounts count={item.stargazersCount} text={"Stars"} /> 
         <RepositoryItemCounts count={item.forksCount} text={"Forks"} />  
         <RepositoryItemCounts count={item.reviewCount}  text={"Reviews"} />      
-        <RepositoryItemCounts count={item.ratingAverage} text={"Rating"} />              
+        <RepositoryItemCounts count={item.ratingAverage} text={"Rating"} />                   
     </View>            
     
   );

@@ -12,6 +12,8 @@
   },
   "rules": {
     "react/prop-types": "off",
-    "semi": "error"
+    "semi": "error",
+    "quotes": ["warn", "single"],
+    "space-in-brackets": ["warn", "always"]
   }
 }

@@ -19,12 +19,13 @@ const RepositoryItemDesc = ({ fullName, description, language }) => {
  return (    
     <View>
     <ListItem.Content>
-    <ListItem.Title>{fullName}</ListItem.Title>
-    <ListItem.Subtitle>{description}</ListItem.Subtitle>          
+    <ListItem.Title testID='itemFullName'>{fullName}</ListItem.Title>
+    <ListItem.Subtitle testID='itemDescription'>{description}</ListItem.Subtitle>          
     <Text 
       style={styles.languageTag}            
       fontSize="subheading" 
       color="darkBackground"
+      testID='itemLanguage'
      >
        {language}
     </Text>   

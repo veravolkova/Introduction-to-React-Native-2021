@@ -25,13 +25,15 @@ const SignInContainer = ({ onSubmit }) => {
       <>
         <FormikTextInput
           name="username"
-          placeholder="Username"                 
+          placeholder="Username"
+          testID="usernameField"                 
         />    
        
         <FormikTextInput 
           name="password"
           placeholder="Password"
           secureTextEntry
+          testID="passwordField"
         />
 
         <Button text="Sign in" onPress={() => onSubmit()} />

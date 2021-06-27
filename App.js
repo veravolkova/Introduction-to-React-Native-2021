@@ -1,6 +1,7 @@
 import React from "react";
 import { NativeRouter } from 'react-router-native';
 import { ApolloProvider } from '@apollo/client';
+//import { ApolloProvider } from '@apollo/react-hooks';
 import Constants from 'expo-constants';
 
 import Main from "./src/components/Main";
