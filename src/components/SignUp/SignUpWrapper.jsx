@@ -2,7 +2,7 @@ import React from 'react';
 import * as yup from 'yup';
 import { Formik } from 'formik';
 import { StyleSheet, View } from 'react-native';
-import SignInContainer from './SignInContainer';
+import SignUpContainer from './SignUpContainer';
 
 const styles = StyleSheet.create({
   signInContainer: {
@@ -20,20 +20,27 @@ const styles = StyleSheet.create({
 const validationSchema = yup.object().shape({
   username: yup
     .string()
-    .min(3, 'Username should contain at least 3 characters')
+    .min(1, 'Username should contain at least 3 characters')
+    .max(30, 'Username should contain 30 characters at maximum')
     .required('Username is required'),
+  passwordConfirmed: yup
+    .string()
+    .oneOf([yup.ref('password')], 'Passwords do not match')
+    .required('Password confirm is required'),
   password: yup
     .string()
-    .min(3, 'Password should contain at least 3 characters')
-    .required('Password is required'),
+    .min(5, 'Password should contain at least 5 characters')
+    .max(50, 'Password should contain 50 characters at maximum')
+    .required('Password is required')
 });
 
 const initialValues = {
   username: '',
   password: '',
+  passwordConfirmed: '',
 };
 
-const SignInWrapper = ({ onSubmit }) => {
+const SignUpWrapper = ({ onSubmit }) => {
   return (
     <View style={styles.signInContainer}>
       <Formik
@@ -42,11 +49,11 @@ const SignInWrapper = ({ onSubmit }) => {
         validationSchema={validationSchema}
       >
 
-        {({ handleSubmit }) => <SignInContainer onSubmit={handleSubmit} />}
+        {({ handleSubmit }) => <SignUpContainer onSubmit={handleSubmit} />}
 
       </Formik>
     </View>
   );
 };
 
-export default SignInWrapper;
+export default SignUpWrapper;

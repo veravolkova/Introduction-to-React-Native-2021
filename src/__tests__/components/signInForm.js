@@ -7,10 +7,10 @@ describe('SignIn', () => {
   describe('SignInContainer', () => {
     it('calls onSubmit function with correct arguments when a valid form is submitted', async () => {
       // render the SignInContainer component, fill the text inputs and press the submit button
-   /*    jest.mock('../../../setupTests.js', () => {
-        const mApolloClient = { query: jest.fn() };
-        return { setupApi: jest.fn(() => mApolloClient) };
-      }); */
+      /*    jest.mock('../../../setupTests.js', () => {
+           const mApolloClient = { query: jest.fn() };
+           return { setupApi: jest.fn(() => mApolloClient) };
+         }); */
 
       const onSubmit = jest.fn();
       const { getByTestId } = render(<SignIn onSubmit={onSubmit} />);
@@ -18,7 +18,7 @@ describe('SignIn', () => {
       fireEvent.changeText(getByTestId('usernameField'), 'kalle');
       fireEvent.changeText(getByTestId('passwordField'), 'password');
       fireEvent.press(getByTestId('submitButton'));
-    
+
 
       await waitFor(() => {
         // expect the onSubmit function to have been called once and with a correct first argument

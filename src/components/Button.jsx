@@ -1,10 +1,9 @@
-import React from "react";
-import { StyleSheet, TouchableWithoutFeedback, View } from "react-native";
-//https://scottdomes.com/react-native-sexy-forms/
-
+import React from 'react';
+import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import Text from './Text';
-import theme from "../theme";
+import theme from '../theme';
 
+//https://scottdomes.com/react-native-sexy-forms/
 const styles = StyleSheet.create({
   btnContainer: {
     shadowColor: '#000',

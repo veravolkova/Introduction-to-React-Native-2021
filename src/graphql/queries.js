@@ -1,10 +1,11 @@
 import { gql } from '@apollo/client';
 
+
 export const GET_REPOSITORIES = gql`
-  query {
-    repositories {
+  query ($orderBy: AllRepositoriesOrderBy, $orderDirection: OrderDirection, $searchKeyword: String) {
+    repositories(orderBy: $orderBy, orderDirection: $orderDirection, searchKeyword: $searchKeyword) { 
       edges {
-        node {
+        node {  
           id,
           fullName,
           ownerName,					
@@ -16,6 +17,7 @@ export const GET_REPOSITORIES = gql`
           language,
           ownerAvatarUrl,
           url,
+          createdAt
         }
       }
     }
@@ -27,6 +29,7 @@ export const GET_REPOSITORY = gql`
     repository(id: $id) {
       id
       fullName
+      ownerName
     	description
     	language
     	stargazersCount
@@ -52,18 +55,6 @@ export const GET_REPOSITORY = gql`
 }
 `;
 
-/* export const AUTHORIZE = gql`
-  query {
-    users {
-      edges {
-        node {
-          username        
-      }
-    }
-  }
-}
-`; */
-
 export const AUTHORIZED_USER = gql`
   query {
     authorizedUser {
@@ -73,7 +64,4 @@ export const AUTHORIZED_USER = gql`
 }
 `;
 
-
-
-// other queries...
 

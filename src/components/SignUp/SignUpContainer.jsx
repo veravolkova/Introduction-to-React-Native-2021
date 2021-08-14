@@ -4,7 +4,7 @@ import FormikTextInput from '../FormikTextInput';
 import Button from '../Button';
 
 const styles = StyleSheet.create({
-  signInContainer: {
+  signUpContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
@@ -16,10 +16,9 @@ const styles = StyleSheet.create({
   },
 });
 
-
-const SignInContainer = ({ onSubmit }) => {
+const SignUpContainer = ({ onSubmit }) => {
   return (
-    <View style={styles.signInContainer}>
+    <View style={styles.signUpContainer}>
       <>
         <FormikTextInput
           name="username"
@@ -31,13 +30,20 @@ const SignInContainer = ({ onSubmit }) => {
           name="password"
           placeholder="Password"
           secureTextEntry
-          testID="passwordField"
+          testID="passwordInitial"
         />
 
-        <Button text="Sign in" onPress={() => onSubmit()} />
+        <FormikTextInput
+          name="passwordConfirmed"
+          placeholder="Confirm Password"
+          secureTextEntry
+          testID="passwordConfirmed"
+        />
+
+        <Button text="Sign up" onPress={() => onSubmit()} />
       </>
     </View>
   );
 };
 
-export default SignInContainer;
+export default SignUpContainer;

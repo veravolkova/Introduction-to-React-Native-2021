@@ -1,18 +1,20 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import useSignIn from '../../hooks/useSignIn';
-import SignInWrapper from './SignInWrapper';
+import useSignUp from '../../hooks/useSignUp';
+import SignUpWrapper from './SignUpWrapper';
 
-export const SignIn = () => {
+export const SignUp = () => {
+  const [signUp] = useSignUp();
   const [signIn] = useSignIn();
-
   const history = useHistory();
 
   const onSubmit = async (values) => {
-    const { username, password } = values;
-    console.log(values);
+    const username = values.username;
+    const password = values.password;
 
     try {
+      await signUp({ username, password });
       await signIn({ username, password });
       history.push('/');
     } catch (e) {
@@ -21,8 +23,8 @@ export const SignIn = () => {
   };
 
   return (
-    <SignInWrapper onSubmit={onSubmit} />
+    <SignUpWrapper onSubmit={onSubmit} />
   );
 };
 
-export default SignIn;
+export default SignUp;

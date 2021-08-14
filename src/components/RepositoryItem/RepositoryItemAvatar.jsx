@@ -2,15 +2,15 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Avatar } from 'react-native-elements';
 
-const styles = StyleSheet.create({  
+const styles = StyleSheet.create({
   avatar: {
     width: 50,
     height: 50,
     borderRadius: 25,
-    overflow:'hidden',
+    overflow: 'hidden',
     marginRight: 10,
-    }
-  });
+  }
+});
 
 
 const RepositoryItemAvatar = ({ uri }) => {
@@ -20,8 +20,8 @@ const RepositoryItemAvatar = ({ uri }) => {
     return null;
   }
 
-  return (       
-      <Avatar source={{ uri:uri }} style={styles.avatar}/>       
+  return (
+    <Avatar source={{ uri: uri }} style={styles.avatar} />
   );
 };
 

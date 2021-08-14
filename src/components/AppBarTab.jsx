@@ -1,8 +1,7 @@
-import React from "react";
-import { View, StyleSheet, TouchableWithoutFeedback} from "react-native";
-import { Link } from "react-router-native";
-
-import Text from "./Text";
+import React from 'react';
+import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { Link } from 'react-router-native';
+import Text from './Text';
 
 const styles = StyleSheet.create({
   tabContainer: {
@@ -11,24 +10,23 @@ const styles = StyleSheet.create({
 });
 
 
-const AppBarTab = ( { text, link, onClick } ) => {
+const AppBarTab = ({ text, link, onClick }) => {
 
-    return (    
-
+  return (
     <View style={styles.tabContainer}>
-    <Link    
-      to={link}
-      component={TouchableWithoutFeedback}  
-      onPress={onClick}
-    >
-    <Text                      
-          fontWeight="bold" 
-          fontSize="subheading" 
+      <Link
+        to={link}
+        component={TouchableWithoutFeedback}
+        onPress={onClick}
+      >
+        <Text
+          fontWeight="bold"
+          fontSize="subheading"
           color="darkBackground">
           {text}
-        </Text>    
-    </Link> 
-    </View>     
+        </Text>
+      </Link>
+    </View>
   );
 };
 
@@ -36,5 +34,3 @@ export default AppBarTab;
 
 
 
-     
-     

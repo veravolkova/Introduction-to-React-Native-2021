@@ -1,20 +1,14 @@
 import { useApolloClient } from '@apollo/client';
-
 import useAuthStorage from './useAuthStorage';
-//import { useHistory } from 'react-router-dom';
 
 
 const useSignOut = () => {    
     const authStorage = useAuthStorage();
     const apolloClient = useApolloClient();
 
-    //const history = useHistory();
-
-    const signOut = async () => {     
-        console.log('called');   
+    const signOut = async () => {       
         await authStorage.removeAccessToken();
-        apolloClient.resetStore();  
-        //history.push('/');
+        apolloClient.resetStore();       
     };
   
     return signOut;
