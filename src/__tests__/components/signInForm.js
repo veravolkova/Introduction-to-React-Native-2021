@@ -1,19 +1,16 @@
 /* eslint-disable jest/expect-expect */
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
-import { SignIn } from '../../components/SignIn';
+import SignIn from '../../components/SignIn';
+import  SignInWrapper  from '../../components/SignIn/SignInWrapper';
 
 describe('SignIn', () => {
-  describe('SignInContainer', () => {
+  describe('SignInWrapper', () => {
     it('calls onSubmit function with correct arguments when a valid form is submitted', async () => {
-      // render the SignInContainer component, fill the text inputs and press the submit button
-      /*    jest.mock('../../../setupTests.js', () => {
-           const mApolloClient = { query: jest.fn() };
-           return { setupApi: jest.fn(() => mApolloClient) };
-         }); */
+      // render the SignInContainer component, fill the text inputs and press the submit button     
 
       const onSubmit = jest.fn();
-      const { getByTestId } = render(<SignIn onSubmit={onSubmit} />);
+      const { getByTestId } = render(<SignInWrapper onSubmit={onSubmit} />);
 
       fireEvent.changeText(getByTestId('usernameField'), 'kalle');
       fireEvent.changeText(getByTestId('passwordField'), 'password');

@@ -4,7 +4,7 @@ import useCreateReview from '../../hooks/useCreateReview';
 import ReviewWrapper from './ReviewWrapper';
 
 export const CreateReview = () => {
-  const [createReview, result] = useCreateReview();
+  const [createReview] = useCreateReview();
   const history = useHistory();
 
   const onSubmit = async (values) => {
@@ -17,7 +17,6 @@ export const CreateReview = () => {
     try {
       await createReview({ repositoryName, ownerName, rating, text });
       history.push('/');
-      // history.push(`/repository/${data.id}`);
     } catch (e) {
       console.log(e);
     }

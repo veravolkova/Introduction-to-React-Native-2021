@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
   },
 });
 
+
 const validationSchema = yup.object().shape({
   username: yup
     .string()
@@ -28,12 +29,7 @@ const validationSchema = yup.object().shape({
     .required('Password is required'),
 });
 
-const initialValues = {
-  username: '',
-  password: '',
-};
-
-const SignInWrapper = ({ onSubmit }) => {
+const SignInWrapper = ({ onSubmit, initialValues }) => {
   return (
     <View style={styles.signInContainer}>
       <Formik
@@ -41,9 +37,7 @@ const SignInWrapper = ({ onSubmit }) => {
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
-
         {({ handleSubmit }) => <SignInContainer onSubmit={handleSubmit} />}
-
       </Formik>
     </View>
   );

@@ -6,7 +6,6 @@ import Text from '../components/Text';
 import useAuthorizedUser from '../hooks/useAuthorizedUser';
 import useSignOut from '../hooks/useSignOut';
 
-
 const styles = StyleSheet.create({
   appBarContainer: {
     display: 'flex',
@@ -15,6 +14,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.darkBackground,
   },
 });
+
 
 const AppBar = () => {
 
@@ -25,13 +25,14 @@ const AppBar = () => {
       <ScrollView horizontal>
         <AppBarTab text="Repositories" link="/" />
         {!authorizedUser ?
-          <>
+          <>                     
             <AppBarTab text="Sign In" link="/signin" />
             <AppBarTab text="Sign Up" link="/signup" />
           </>
           :
-          <>
+          <>           
             <AppBarTab text="Create review" link="/review" />
+            <AppBarTab text="MyReviews" link="/myreviews" />                        
             <AppBarTab text="Sign Out" link="/" onClick={useSignOut()} />
             <Text style={{ marginLeft: 'auto' }}>Hello {authorizedUser.username}</Text>
           </>

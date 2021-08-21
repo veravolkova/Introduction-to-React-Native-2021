@@ -40,6 +40,7 @@ const initialValues = {
   passwordConfirmed: '',
 };
 
+
 const SignUpWrapper = ({ onSubmit }) => {
   return (
     <View style={styles.signInContainer}>

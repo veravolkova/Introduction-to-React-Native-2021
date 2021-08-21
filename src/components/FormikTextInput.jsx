@@ -4,8 +4,7 @@ import { useField } from 'formik';
 import TextInput from './TextInput';
 import Text from './Text';
 
-//form style code source:
-//https://scottdomes.com/react-native-sexy-forms/
+// style source https://scottdomes.com/react-native-sexy-forms/
 const styles = StyleSheet.create({
   input: {
     height: 40,
@@ -23,8 +22,8 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.23,
-    shadowRadius: 2.62,
+    shadowOpacity: 0.25,
+    shadowRadius: 2.5,
     elevation: 4,
   },
   errorText: {

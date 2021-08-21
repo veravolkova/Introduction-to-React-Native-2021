@@ -4,6 +4,7 @@ import useSignIn from '../../hooks/useSignIn';
 import useSignUp from '../../hooks/useSignUp';
 import SignUpWrapper from './SignUpWrapper';
 
+
 export const SignUp = () => {
   const [signUp] = useSignUp();
   const [signIn] = useSignIn();
@@ -22,6 +23,10 @@ export const SignUp = () => {
     }
   };
 
+  if (!signUp || !signIn) {
+    return null;
+  }
+  
   return (
     <SignUpWrapper onSubmit={onSubmit} />
   );

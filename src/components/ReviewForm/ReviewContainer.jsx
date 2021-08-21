@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-
 import FormikTextInput from '../FormikTextInput';
 import Button from '../Button';
 
@@ -9,41 +8,42 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 15,   
+    marginBottom: 15,
   },
   error: {
-    marginBottom: 20,   
+    marginBottom: 20,
     height: 17.5,
   },
 });
 
 
-const ReviewContainer = ({ onSubmit }) => {  
-  return (    
+const ReviewContainer = ({ onSubmit }) => {
+  return (
     <View style={styles.reviewContainer}>
       <>
         <FormikTextInput
           name="repositoryName"
           placeholder="RepositoryName"
-          testID="repositoryNameField"                 
-        />    
-       
-        <FormikTextInput 
+          testID="repositoryNameField"
+        />
+
+        <FormikTextInput
           name="ownerName"
-          placeholder="OwnerName"         
+          placeholder="OwnerName"
           testID="ownerNameField"
         />
 
-        <FormikTextInput 
+        <FormikTextInput
           name="rating"
-          placeholder="Rating"         
+          placeholder="Rating"
           testID="reviewRatingField"
         />
 
-        <FormikTextInput 
+        <FormikTextInput
           name="text"
-          placeholder="Text"         
-          testID="reviewText"          
+          placeholder="Text"
+          testID="reviewText"
+          multiline={true}
         />
 
         <Button text="Add Review" onPress={() => onSubmit()} />

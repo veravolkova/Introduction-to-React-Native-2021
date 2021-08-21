@@ -18,14 +18,15 @@ const styles = StyleSheet.create({
   },
 });
 
+
 const validationSchema = yup.object().shape({
   ownerName: yup
     .string()
-    .min(3, 'Owner\'s name should contain at least 3 characters')    
+    .min(3, 'Owner\'s name should contain at least 3 characters')
     .required('Repository owner\'s username is a required string'),
   repositoryName: yup
     .string()
-    .min(3, 'Repository name should contain at least 3 characters')    
+    .min(3, 'Repository name should contain at least 3 characters')
     .required('Repository name is a required string'),
   rating: yup
     .number()
@@ -34,7 +35,7 @@ const validationSchema = yup.object().shape({
     .required('Rating is required'),
   text: yup
     .string()
-    .min(3, 'Review text should contain at least 5 characters') 
+    .min(3, 'Review text should contain at least 5 characters')
 });
 
 const initialValues = {
@@ -47,14 +48,14 @@ const initialValues = {
 const ReviewWrapper = ({ onSubmit }) => {
   return (
     <View style={styles.signInContainer}>
-      <Formik 
-        initialValues={initialValues} 
+      <Formik
+        initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
-        >    
-       
-        {({ handleSubmit }) => <ReviewContainer onSubmit={handleSubmit}/>}      
-      
+      >
+
+        {({ handleSubmit }) => <ReviewContainer onSubmit={handleSubmit} />}
+
       </Formik>
     </View>
   );

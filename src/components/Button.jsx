@@ -3,7 +3,7 @@ import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import Text from './Text';
 import theme from '../theme';
 
-//https://scottdomes.com/react-native-sexy-forms/
+// style source: https://scottdomes.com/react-native-sexy-forms/
 const styles = StyleSheet.create({
   btnContainer: {
     shadowColor: '#000',
@@ -29,10 +29,11 @@ const styles = StyleSheet.create({
   },
 });
 
+
 //to do - text component
 const Button = ({ text, onPress }) => {
     return (             
-      <TouchableWithoutFeedback onPress={onPress}>
+      <TouchableWithoutFeedback onPress={onPress} testID="submitButton">
         <View style={styles.btnContainer}>  
             <Text style={styles.text}>{text}</Text>            
         </View>

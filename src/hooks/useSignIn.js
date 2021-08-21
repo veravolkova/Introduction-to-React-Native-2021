@@ -10,7 +10,9 @@ const useSignIn = () => {
     const apolloClient = useApolloClient();
     const history = useHistory();
 
-    const [mutate, result] = useMutation(AUTHORIZE_USER, { onError: (error) => { console.log(error.graphQLErrors[0].message); } });
+    const [mutate, result] = useMutation(AUTHORIZE_USER, { 
+        onError: (error) => { console.log(error.graphQLErrors[0].message); } 
+    });
 
     const signIn = async ({ username, password }) => {
         const { data } = await mutate({ variables: { username, password } });

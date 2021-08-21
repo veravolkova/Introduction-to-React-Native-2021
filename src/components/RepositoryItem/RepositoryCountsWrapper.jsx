@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
   },
 });
 
+
 const RepositoryCountsWrapper = ({ item }) => {
 
   if (!item) {

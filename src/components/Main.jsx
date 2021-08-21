@@ -7,6 +7,7 @@ import RepositorySingle from './RepositorySingle';
 import SignIn from './SignIn/index';
 import SignUp from './SignUp/index';
 import CreateReview from './ReviewForm/index';
+import MyReviews from './MyReviews';
 
 import theme from '../theme';
 
@@ -23,19 +24,22 @@ const Main = () => {
     <View style={styles.mainContainer}>
       <AppBar />
       <Switch>
-        <Route path="/signin" exact>
-          <SignIn />
-        </Route>
         <Route path="/signup" exact>
           <SignUp />
         </Route>
+        <Route path="/signin" exact>
+          <SignIn />
+        </Route>        
         <Route path="/" exact>
           <RepositoryList all={true} />
         </Route>
         <Route path="/repository/:id" >
           <RepositorySingle all={false} />
         </Route>
-        <Route path="/review" >
+        <Route path="/myreviews">
+          <MyReviews />
+        </Route>
+        <Route path="/review" exact>
           <CreateReview />
         </Route>
         <Redirect to="/" />

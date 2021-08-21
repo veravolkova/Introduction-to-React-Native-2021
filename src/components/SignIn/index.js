@@ -3,14 +3,13 @@ import { useHistory } from 'react-router-dom';
 import useSignIn from '../../hooks/useSignIn';
 import SignInWrapper from './SignInWrapper';
 
+
 export const SignIn = () => {
   const [signIn] = useSignIn();
-
   const history = useHistory();
 
   const onSubmit = async (values) => {
     const { username, password } = values;
-    console.log(values);
 
     try {
       await signIn({ username, password });
@@ -20,8 +19,14 @@ export const SignIn = () => {
     }
   };
 
+  const initialValues = {
+    username: '',
+    password: '',
+  };
+  
+
   return (
-    <SignInWrapper onSubmit={onSubmit} />
+    <SignInWrapper onSubmit={onSubmit} initialValues={initialValues}/>
   );
 };
 

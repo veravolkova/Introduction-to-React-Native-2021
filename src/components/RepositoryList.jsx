@@ -22,13 +22,13 @@ export const RepositoryListContainer = ({ repositories }) => {
   const history = useHistory();
 
   const onPress = (item) => {
-    history.push(`/repository/${item.id}`);   
+    history.push(`/repository/${item.id}`);
   };
 
   return (
-    // <View >     
     <FlatList
       data={repositoryNodes}
+      keyExtractor={({ id }) => id}
       ItemSeparatorComponent={ItemSeparator}
       renderItem={({ item }) => (
         <TouchableOpacity onPress={() => onPress(item)}>
@@ -36,11 +36,10 @@ export const RepositoryListContainer = ({ repositories }) => {
         </TouchableOpacity>
       )}
     />
-    // </View>
   );
 };
 
-const RepositoryList = (all) => {  
+const RepositoryList = (all) => {
   const [sortBy, setSortBy] = useState('CREATED_AT,DESC');
   const orderCriteria = sortBy.split(',');
 
@@ -48,7 +47,6 @@ const RepositoryList = (all) => {
 
   // Debounce callback
   const onChangeSearch = useDebouncedCallback(
-    // function
     (value) => {
       setSearchQuery(value);
     },
@@ -63,7 +61,7 @@ const RepositoryList = (all) => {
   });
 
   return (
-
+    // to do: style picker
     <>
       <Picker
         selectedValue={sortBy}
@@ -79,7 +77,7 @@ const RepositoryList = (all) => {
       <Searchbar
         placeholder="Search"
         onChangeText={onChangeSearch}
-        value={searchQuery}     
+        value={searchQuery}
       />
       <RepositoryListContainer repositories={repositories} all={all} />;
     </>

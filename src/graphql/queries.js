@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client';
 
+// to do: use fragments
 
 export const GET_REPOSITORIES = gql`
   query ($orderBy: AllRepositoriesOrderBy, $orderDirection: OrderDirection, $searchKeyword: String) {
@@ -25,19 +26,19 @@ export const GET_REPOSITORIES = gql`
 `;
 
 export const GET_REPOSITORY = gql`
-  query ($id: ID!) {
+  query ($id: ID!, $first:  Int,  $after: String) {
     repository(id: $id) {
       id
       fullName
       ownerName
-    	description
-    	language
-    	stargazersCount
-    	forksCount
+      description
+      language
+      stargazersCount
+      forksCount
       reviewCount
       ratingAverage
       url
-      reviews {
+      reviews(first: $first, after: $after) {
         edges {
           node {
             id
@@ -47,21 +48,39 @@ export const GET_REPOSITORY = gql`
             user {
               id
               username
-           }
+            }
+          }
+          cursor
+        }
+        pageInfo {
+          endCursor
+          startCursor
+          hasNextPage
         }
       }
     }
   }
-}
 `;
 
 export const AUTHORIZED_USER = gql`
-  query {
+  query getAuthorizedUser($includeReviews: Boolean = false) {
     authorizedUser {
       id
-      username
+      username     
+      reviews @include(if: $includeReviews) {
+        edges {
+          node {
+            repository {
+              id
+              fullName                       
+            }
+            id
+            text
+            rating
+            createdAt           
+          }         
+        }       
+      }
+    }
   }
-}
 `;
-
-
