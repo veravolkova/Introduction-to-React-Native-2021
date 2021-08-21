@@ -24,10 +24,10 @@ Course exercises solutions. Building native Android and iOS mobile applications 
  - form validation
  - infinite scrolling
 
-<img src="https://drive.google.com/file/d/1gBSU9wglelOaThB8Xp7DBY5Krbr9zXqI" alt="Repository List">
+<img src="https://drive.google.com/file/d/1gBSU9wglelOaThB8Xp7DBY5Krbr9zXqI/view?usp=sharing" alt="Repository List">
 
-<img src="https://drive.google.com/file/d/1e8xyI9X6xNll9Dnjwlo8QKJFQHOjtM3W" alt="Repository View">
+<img src="https://drive.google.com/file/d/1e8xyI9X6xNll9Dnjwlo8QKJFQHOjtM3W/view?usp=sharing" alt="Repository View">
 
-<img src="https://drive.google.com/file/d/1dLT9Dfp2AjXLe-xh_MLIVctYqS26peGq" alt="Create Review Form">
+<img src="https://drive.google.com/file/d/1dLT9Dfp2AjXLe-xh_MLIVctYqS26peGq/view?usp=sharing" alt="Create Review Form">
 
-<img src="https://drive.google.com/file/d/1NleDT7_JiZwbhVeUWTq9OLlGzVMJUwC5" alt="My Reviews View"> 
+<img src="https://drive.google.com/file/d/1NleDT7_JiZwbhVeUWTq9OLlGzVMJUwC5/view?usp=sharing" alt="My Reviews View"> 
