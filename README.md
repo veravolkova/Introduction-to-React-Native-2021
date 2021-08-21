@@ -30,4 +30,4 @@ Course exercises solutions. Building native Android and iOS mobile applications 
 
 <img src="https://drive.google.com/file/d/1dLT9Dfp2AjXLe-xh_MLIVctYqS26peGq" alt="Create Review Form">
 
-<img src=https://drive.google.com/file/d/1NleDT7_JiZwbhVeUWTq9OLlGzVMJUwC5" alt="My Reviews View"> 
+<img src="https://drive.google.com/file/d/1NleDT7_JiZwbhVeUWTq9OLlGzVMJUwC5" alt="My Reviews View"> 
